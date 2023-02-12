@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    background: linear-gradient(#e66465, #9198e5);
 }
 
 .nav-bar {
@@ -17,8 +18,6 @@
     align-items: center;
     padding-left: 25px;
     padding-right: 25px;
-    border-bottom: 1px solid grey;
-    background: linear-gradient(#e66465, #9198e5);
     color: white;
 }
 
@@ -47,7 +46,6 @@
     align-items: center;
     justify-content: center;
     height: 80vh;
-    background-color: rgb(231, 230, 230);
 }
 
 .sketch-pad {
@@ -61,6 +59,4 @@
 
 .footer {
     height: 10vh;
-    border-top: 1px solid grey;
-    background:#e66465;
 }
