@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+.main-wrap {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .nav-bar {
     height: 10vh;
     display: flex;
@@ -11,7 +18,8 @@
     padding-left: 25px;
     padding-right: 25px;
     border-bottom: 1px solid grey;
-    background-color: antiquewhite;
+    background: linear-gradient(#e66465, #9198e5);
+    color: white;
 }
 
 .input-div {
@@ -28,4 +36,31 @@
     padding: 8px;
     border: 1px solid grey;
     border-radius: 5px;
+}
+
+.nav-bar input {
+    padding: 5px;
+}
+
+.sketch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: rgb(231, 230, 230);
+}
+
+.sketch-pad {
+    background-color: rgb(255, 255, 255);
+    border: grey 1px solid;
+    height: 80%;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    height: 10vh;
+    border-top: 1px solid grey;
+    background:#e66465;
 }
