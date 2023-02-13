@@ -8,6 +8,13 @@ function generateGrid(width, height){
     }
 }
 
+function clearGrid(){
+    let parent = document.getElementById('sketch-pad');
+    while(parent.firstChild){
+        parent.firstChild.remove();
+    }
+}
+
 let newGridButton = document.getElementById('new-pad-btn');
 newGridButton.addEventListener('click', () =>{
     let widthInput = document.getElementById('width-input').value;
@@ -19,6 +26,9 @@ newGridButton.addEventListener('click', () =>{
         alert('Invalid input! Try again!')
     }
     else {
+        if(document.getElementById('sketch-pad').firstChild){
+            clearGrid();
+        }
         generateGrid(width, height);
     }
     
