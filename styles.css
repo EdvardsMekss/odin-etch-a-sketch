@@ -21,6 +21,10 @@
     color: white;
 }
 
+.nav-bar h1 {
+    flex-shrink: 0;
+}
+
 .input-div {
     display: flex;
     justify-content: space-between;
@@ -53,11 +57,19 @@
     background-color: rgb(255, 255, 255);
     border: grey 1px solid;
     box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
-    height: 80%;
-    width: 90%;
+    height: 700px;
+    width: 700px;
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
+}
+
+.new-div {
+    border: 1px grey solid;
+    flex-grow: 1;
+}
+
+.new-div-active {
+    background-color: aquamarine;
 }
 
 .footer {

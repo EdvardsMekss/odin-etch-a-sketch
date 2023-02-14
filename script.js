@@ -1,11 +1,13 @@
 function generateGrid(width, height){
-    for(let i=0; i<width; i++){
-        for(let j=0; j<height; j++){
-            let newDiv = document.createElement('div');
-            newDiv.style.cssText = 'min-width: 10px; min-height: 10px; border: grey 1px solid;';
+    let sketchPad = document.getElementById('sketch-pad')
+    while(!isOverflown(sketchPad)){
+        let newDiv = document.createElement('div');
+            newDiv.classList.add('new-div');
+            newDiv.style.width = width + 'px';
+            newDiv.style.height = height + 'px';
             document.getElementById('sketch-pad').appendChild(newDiv);
-        }
     }
+    sketchPad.removeChild(sketchPad.lastElementChild);
 }
 
 function clearGrid(){
@@ -13,6 +15,43 @@ function clearGrid(){
     while(parent.firstChild){
         parent.firstChild.remove();
     }
+}
+
+function isOverflown(sketchPad) {
+    return sketchPad.scrollHeight > sketchPad.clientHeight || sketchPad.scrollWidth > sketchPad.clientWidth;
+  }
+
+function addEventToDivs(){
+    let mouseOver = false;
+    let mouseDown = false;
+    const newDivs = document.getElementsByClassName('new-div');
+    for(const div of newDivs){
+        div.addEventListener('mouseover', ()=>{
+            mouseOver = true;
+            ifBothTrigger(div);
+        })
+        div.addEventListener('mousedown', ()=>{
+            mouseDown = true;
+            ifBothTrigger(div);
+        })
+        div.addEventListener('mouseup', ()=>{
+            mouseDown = false;
+            ifBothTrigger(div);
+        })
+    }
+    function ifBothTrigger(div) {
+        if (mouseOver && mouseDown) {
+          changeColor(div);
+        }
+      }
+      
+    
+    function changeColor(div){
+        if (mouseDown === true && mouseOver === true) {
+            div.style.backgroundColor = 'blue';
+        }
+        }
+    
 }
 
 let newGridButton = document.getElementById('new-pad-btn');
@@ -30,6 +69,7 @@ newGridButton.addEventListener('click', () =>{
             clearGrid();
         }
         generateGrid(width, height);
+        addEventToDivs();
     }
     
 });
