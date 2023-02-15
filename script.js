@@ -48,7 +48,7 @@ function addEventToDivs(){
     
     function changeColor(div){
         if (mouseDown === true && mouseOver === true) {
-            div.style.backgroundColor = 'blue';
+            div.style.backgroundColor = currentColor;
         }
         }
     
@@ -73,3 +73,20 @@ newGridButton.addEventListener('click', () =>{
     }
     
 });
+
+var colorPickers = document.getElementsByClassName("color-picker");
+var currentColor;
+
+for (var i = 0; i < colorPickers.length; i++) {
+  colorPickers[i].addEventListener("click", function() {
+    currentColor = this.value;
+    for (var j = 0; j < colorPickers.length; j++) {
+        colorPickers[j].classList.remove("active");
+        colorPickers[j].classList.remove("active-white");
+    }
+    if(currentColor === "white") this.classList.add("active-white");
+    else this.classList.add("active");
+  });
+}
+
+

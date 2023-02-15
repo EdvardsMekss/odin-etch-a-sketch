@@ -23,7 +23,60 @@
 
 .nav-bar h1 {
     flex-shrink: 0;
+    font-weight: bold;
 }
+
+.color-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.color-picker {
+    width: 55px;
+    height: 55px;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    transition: 50ms;
+    opacity: 0.75;
+}
+
+.color-picker:hover {
+    scale: 1.05;
+    transition: 50ms;
+}
+
+#white {
+    background-color: white;
+}
+
+#black {
+    background-color: black;
+}
+
+#red {
+    background-color: red;
+}
+
+#green {
+    background-color: green;
+}
+
+#blue {
+    background-color: blue;
+}
+
+.active {
+    border: 2px solid rgba(255, 255, 255, 1);
+    opacity: 1;
+}
+
+.active-white {
+    border: 2px solid rgba(0, 0, 0);
+    opacity: 1;
+}
+
 
 .input-div {
     display: flex;
@@ -31,18 +84,44 @@
     gap: 15px;
 }
 
-.nav-bar h1 {
-    font-weight: bold;
+.nav-bar button {
+    width: 157px;
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    transition: 50ms;
 }
 
-.nav-bar button {
-    padding: 8px;
-    border: 1px solid grey;
-    border-radius: 5px;
+.nav-bar button:hover {
+    transition: 50ms;
+    box-shadow: rgb(255, 255, 255, 0.35) 5px 5px 15px;
+}
+
+.nav-bar button:active {
+    scale: 1.05;
+    transition: 50ms;
 }
 
 .nav-bar input {
-    padding: 5px;
+    width: 133px;
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+}
+
+.nav-bar input:focus {
+    outline: white;
+    box-shadow: rgb(255, 255, 255, 0.35) 5px 5px 15px;
+    transition: 50ms;
+}
+
+.nav-bar input::placeholder {
+    color: white;
+    opacity: 1;
 }
 
 .sketch-container {
@@ -55,7 +134,7 @@
 
 .sketch-pad {
     background-color: rgb(255, 255, 255);
-    border: grey 1px solid;
+    border: rgb(255, 255, 255) 1px solid;
     box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
     height: 700px;
     width: 700px;
@@ -64,7 +143,6 @@
 }
 
 .new-div {
-    border: 1px grey solid;
     flex-grow: 1;
 }
 
